@@ -6,7 +6,7 @@ import Sidebar from './(components)/Sidebar'
 import StoreProvider, { useAppSelector } from './redux'
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
-  const isSideBarCollapsed = useAppSelector((state)=>state.global.isSideBarCollapsed)
+  const isSidebarCollapsed = useAppSelector((state)=>state.global.isSidebarCollapsed)
   const isDarkMode = useAppSelector((state)=> state.global.isDarkMode);
 
   useEffect(()=>{
@@ -22,7 +22,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
       {/* Sidebar */}
       <Sidebar />
       <main
-        className={`dark:bg-dark-bg flex w-full flex-col bg-gray-50 ${isSideBarCollapsed? "" : "md:pl-64"}`}
+        className={`flex w-full flex-col bg-gray-50 dark:bg-dark-bg ${isSidebarCollapsed? "" : "md:pl-64"}`}
       >
         <Navbar />
         {children}
